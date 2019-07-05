@@ -4,11 +4,10 @@ const User = require('../models/user');
 const router = new express.Router();
 
 
-
 router.post('/users', async (req, res) => {
     const user = new User(req.body);
     try {
-        await user.save();
+        const result = await user.save();
         res.send(user);
     } catch (e) {
         res
@@ -48,10 +47,10 @@ router.patch('/users/:id', async (req, res) => {
             .send({error: 'Invalid request'})
     }
     try {
-        const user = await User.findByIdAndUpdate(_id, req.body, {
-            new: true,
-            runValidators: true
-        });
+
+        const user = await User.findById(req.params.id);
+        updates.forEach((update) => user[update] = req.body[update]);
+        await user.save();
 
         if (!user) {
             res.status(404).send();
@@ -76,4 +75,4 @@ router.delete('/users/:id', async (req, res) => {
     }
 });
 
-module.exports =router;
+module.exports = router;
