@@ -45,15 +45,18 @@ router.patch('/tasks/:id', async (req, res) => {
     }
     const _id = req.params.id;
     try {
-        const updatedTask = await Task.findByIdAndUpdate(_id, req.body, {
+        const task = await Task.findById(_id);
+        updates.forEach((update) => task[update] = req.body[update]);
+        await task.save();
+        /*const updatedTask = await Task.findByIdAndUpdate(_id, req.body, {
             new: true,
             runValidators: true
-        });
-        if (!updatedTask) {
+        });*/
+        if (!task) {
             res.status(404)
                 .send({error: 'Task not found'})
         } else res.status(200)
-            .send(updatedTask);
+            .send(task);
     } catch (e) {
         res.status(500)
             .send(e);
