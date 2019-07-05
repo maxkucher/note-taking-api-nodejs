@@ -1,8 +1,8 @@
-const mcu = require('./passwords');
+const {mongoConnectionUri} = require('./passwords');
 
 const mongoose = require('mongoose');
 
-mongoose.connect(mcu,
+mongoose.connect(mongoConnectionUri,
     {
         useNewUrlParser: true,
         useCreateIndex: true,
