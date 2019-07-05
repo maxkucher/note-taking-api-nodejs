@@ -5,7 +5,7 @@ const router = new express.Router();
 const auth = require('../middleware/auth');
 
 
-router.post('/users', auth, async (req, res) => {
+router.post('/users', async (req, res) => {
     const user = new User(req.body);
     try {
         const result = await user.save();
@@ -29,17 +29,27 @@ router.post('/users/login', async (req, res) => {
     }
 });
 
-router.post('/users/logout', auth ,async (req, res) => {
+router.post('/users/logout', auth, async (req, res) => {
     try {
         req.user.tokens = req.user.tokens.filter((token) => token.token !== req.token);
         await req.user.save();
         res.send()
     } catch (e) {
         res.status(500)
-            .send(e);
+            .send();
     }
 });
 
+router.post('/users/logout/all', auth, async (req, res) => {
+    try {
+        req.user.tokens = [];
+        await req.user.save();
+        res.send();
+    } catch (e) {
+        res.status(500)
+            .send();
+    }
+});
 
 router.get('/users/me', auth, async (req, res) => {
     res.send(req.user);
@@ -57,8 +67,7 @@ router.get('/users/:id', async (req, res) => {
     }
 });
 
-router.patch('/users/:id', async (req, res) => {
-    const _id = req.params.id;
+router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body);
     const allowedUpdates = ['age', 'name', 'email', 'password'];
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
@@ -68,7 +77,7 @@ router.patch('/users/:id', async (req, res) => {
     }
     try {
 
-        const user = await User.findById(req.params.id);
+        const user = req.user;
         updates.forEach((update) => user[update] = req.body[update]);
         await user.save();
 
@@ -83,10 +92,9 @@ router.patch('/users/:id', async (req, res) => {
     }
 });
 
-router.delete('/users/:id', async (req, res) => {
-    const id = req.params.id;
+router.delete('/users/me', auth, async (req, res) => {
     try {
-        await User.findByIdAndDelete(id);
+        await req.user.remove();
         res.status(200)
             .send();
     } catch (e) {
