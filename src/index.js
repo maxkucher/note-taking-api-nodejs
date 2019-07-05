@@ -44,12 +44,42 @@ app.get('/users/:id', async (req, res) => {
 
 app.patch('/users/:id', async (req, res) => {
     const _id = req.params.id;
+    const updates = Object.keys(req.body);
+    const allowedUpdates = ['age', 'name', 'email', 'password'];
+    const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+    if (!isValidOperation) {
+        return res.status(400)
+            .send({error: 'Invalid request'})
+    }
     try {
+        const user = await User.findByIdAndUpdate(_id, req.body, {
+            new: true,
+            runValidators: true
+        });
 
+        if (!user) {
+            res.status(404).send();
+        } else {
+            res.send(user);
+        }
     } catch (e) {
-
+        res.status(400)
+            .send(e);
     }
 });
+
+app.delete('/users/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        await User.findByIdAndDelete(id);
+        res.status(200)
+            .send();
+    } catch (e) {
+        res.status(500)
+            .send({error: e});
+    }
+});
+
 
 app.post('/tasks', async (req, res) => {
     const task = new Task(req.body);
@@ -83,6 +113,41 @@ app.get('/tasks/:id', async (req, res) => {
     }
 });
 
+app.patch('/tasks/:id', async (req, res) => {
+    const allowedUpdates = ['completed', 'description'];
+    const updates = Object.keys(req.body);
+    const isValidRequest = updates.every((update) => allowedUpdates.includes(update));
+    if (!isValidRequest) {
+        return res.status(400).send();
+    }
+    const _id = req.params.id;
+    try {
+        const updatedTask = await Task.findByIdAndUpdate(_id, req.body, {
+            new: true,
+            runValidators: true
+        });
+        if (!updatedTask) {
+            res.status(404)
+                .send({error: 'Task not found'})
+        } else res.status(200)
+            .send(updatedTask);
+    } catch (e) {
+        res.status(500)
+            .send(e);
+    }
+});
+
+app.delete('/tasks/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        await Task.findByIdAndDelete(id);
+        res.status(200)
+            .send();
+    } catch (e) {
+        res.status(500)
+            .send(e);
+    }
+});
 
 app.listen(port, () => {
     console.log('Server is up and kicking!!!')
