@@ -2,12 +2,14 @@ const express = require('express');
 require('../db/mongoose');
 const User = require('../models/user');
 const router = new express.Router();
+const auth = require('../middleware/auth');
 
 
-router.post('/users', async (req, res) => {
+router.post('/users', auth, async (req, res) => {
     const user = new User(req.body);
     try {
         const result = await user.save();
+        user.generateAuthToken();
         res.send(user);
     } catch (e) {
         res
@@ -27,14 +29,20 @@ router.post('/users/login', async (req, res) => {
     }
 });
 
-
-router.get('/users', async (req, res) => {
+router.post('/users/logout', auth ,async (req, res) => {
     try {
-        res.send(await User.find());
+        req.user.tokens = req.user.tokens.filter((token) => token.token !== req.token);
+        await req.user.save();
+        res.send()
     } catch (e) {
         res.status(500)
             .send(e);
     }
+});
+
+
+router.get('/users/me', auth, async (req, res) => {
+    res.send(req.user);
 });
 
 router.get('/users/:id', async (req, res) => {
