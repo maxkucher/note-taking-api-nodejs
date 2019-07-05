@@ -9,31 +9,78 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.post('/users', (req, res) => {
+app.post('/users', async (req, res) => {
     const user = new User(req.body);
-    user.save()
-        .then(() => {
-            res.send(user);
-        }).catch((e) => {
+    try {
+        await user.save();
+        res.send(user);
+    } catch (e) {
         res
             .status(400)
             .send(e);
-    });
+    }
 });
 
-app.get('/users', (req, res) => {
-
+app.get('/users', async (req, res) => {
+    try {
+        res.send(await User.find());
+    } catch (e) {
+        res.status(500)
+            .send(e);
+    }
 });
 
-app.post('/tasks', (req, res) => {
+app.get('/users/:id', async (req, res) => {
+    const _id = req.params.id;
+    try {
+        res.send(await User.findById(_id));
+    } catch (e) {
+        res.status(404)
+            .send({
+                error: "User not found"
+            })
+    }
+});
+
+app.patch('/users/:id', async (req, res) => {
+    const _id = req.params.id;
+    try {
+
+    } catch (e) {
+
+    }
+});
+
+app.post('/tasks', async (req, res) => {
     const task = new Task(req.body);
-    task.save()
-        .then(() => {
-            res.send(task);
-        }).catch((e) => {
+    try {
+        await task.save();
+        res.send(task);
+    } catch (e) {
         res.status(400)
             .send(e);
-    })
+    }
+});
+
+app.get('/tasks', async (req, res) => {
+    try {
+        const task = await Task.find();
+        res.send(task);
+    } catch (e) {
+        res.status(500)
+            .send(e);
+    }
+});
+
+app.get('/tasks/:id', async (req, res) => {
+    const _id = req.params.id;
+    try {
+        const task = await Task.findById(_id);
+        res.send(task);
+    } catch (e) {
+        res.status(404)
+            .send({error: "Task not found"});
+    }
 });
 
 
