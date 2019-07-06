@@ -76,9 +76,11 @@ It is has default value of 'false'.
 1.Get task by id
 
 >GET /tasks/:id
+
 1.Update task by id
 
 >PATCH /tasks/:id
+
 1.Delete task by id
 
 >DELETE /tasks/:id
