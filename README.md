@@ -1,8 +1,10 @@
 # Note taking REST Api (Node JS)
 
-### Users Management
+You can access api by url : https://radiant-caverns-14919.herokuapp.com/ 
 
-####Sign Up
+## Users Managemen
+
+###Sign Up
 >POST /users
 
 Request Body Example:
@@ -16,7 +18,7 @@ Request Body Example:
 }
 ```
 
-####Login
+###Login
 >POST /users/login
 
 Request Body example:
@@ -30,26 +32,26 @@ Request Body example:
 Note: password length should be grater than 5, and password should not include word 'password'
 The token and user detail will be returned
 in the result.
-####Logout
+###Logout
 >POST /users/logout
 
-####Logout from all devices
+###Logout from all devices
 >POST /users/logout/all
 
-####Get current profile
+###Get current profile
 >GET /users/me
 
-####Update current user info
+###Update current user info
 >PATCH /users/me
 
 Note: only provide properties that you want to change
 
-####Delete crrent user
+###Delete crrent user
 >DELETE /users/me
 
-###Tasks Management
+##Tasks Management
 
-####Add task
+###Add task
 >POST /tasks
 ```json
 {
@@ -59,14 +61,14 @@ Note: only provide properties that you want to change
 ```
 Note parameter "completed" is optional.
 It is has default value of 'false'.
-####Get all user's tasks
+###Get all user's tasks
 >GET /tasks
 
-####Get task by id
+###Get task by id
 >GET /tasks/:id
-####Update task by id
+###Update task by id
 >PATCH /tasks/:id
-####Delete task by id
+###Delete task by id
 >DELETE /tasks/:id
 
  
