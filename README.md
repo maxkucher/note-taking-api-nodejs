@@ -4,7 +4,7 @@ You can access api by url : https://radiant-caverns-14919.herokuapp.com/
 
 ## Users Management
 
-###Sign Up
+1.Sign Up
 
 >POST /users
 
@@ -19,7 +19,7 @@ Request Body Example:
 }
 ```
 
-###Login
+1.Login
 
 >POST /users/login
 
@@ -34,31 +34,31 @@ Request Body example:
 Note: password length should be grater than 5, and password should not include word 'password'
 The token and user detail will be returned
 in the result.
-###Logout
+1.Logout
 
 >POST /users/logout
 
-###Logout from all devices
+1.Logout from all devices
 
 >POST /users/logout/all
 
-###Get current profile
+1.Get current profile
 
 >GET /users/me
 
-###Update current user info
+1.Update current user info
 
 >PATCH /users/me
 
 Note: only provide properties that you want to change
 
-###Delete current user
+1.Delete current user
 
 >DELETE /users/me
 
 ##Tasks Management
 
-###Add task
+1.Add task
 
 >POST /tasks
 ```json
@@ -69,17 +69,17 @@ Note: only provide properties that you want to change
 ```
 Note parameter "completed" is optional.
 It is has default value of 'false'.
-###Get all user's tasks
+1.Get all user's tasks
 
 >GET /tasks
 
-###Get task by id
+1.Get task by id
 
 >GET /tasks/:id
-###Update task by id
+1.Update task by id
 
 >PATCH /tasks/:id
-###Delete task by id
+1.Delete task by id
 
 >DELETE /tasks/:id
 
