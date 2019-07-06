@@ -7,7 +7,7 @@
 
 Request Body Example:
 
-```
+```json
 {
 	"name":"John Doe",
 	"age":20,
@@ -21,12 +21,13 @@ Request Body Example:
 
 Request Body example:
 
-```$xslt
+```json
 {
 	"email":"your@mail.com",
 	"password":"yourpassword"
 }
 ```
+Note: password length should be grater than 5, and password should not include word 'password'
 The token and user detail will be returned
 in the result.
 ####Logout
@@ -45,4 +46,27 @@ Note: only provide properties that you want to change
 
 ####Delete crrent user
 >DELETE /users/me
+
+###Tasks Management
+
+####Add task
+>POST /tasks
+```json
+{
+    "completed": false,
+	"description":"do something"
+}
+```
+Note parameter "completed" is optional.
+It is has default value of 'false'.
+####Get all user's tasks
+>GET /tasks
+
+####Get task by id
+>GET /tasks/:id
+####Update task by id
+>PATCH /tasks/:id
+####Delete task by id
+>DELETE /tasks/:id
+
  

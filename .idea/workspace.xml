@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b3beaf-03ed-46ea-b820-4bc33e76384f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +22,7 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -41,8 +38,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="411">
-                <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+              <first_editor relative-caret-position="241">
+                <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
               </first_editor>
               <second_editor />
             </state>
@@ -61,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routers/user-router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            <state relative-caret-position="164">
+              <caret line="88" column="2" lean-forward="true" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -70,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routers/tasks-router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+            <state relative-caret-position="561">
+              <caret line="76" column="47" lean-forward="true" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -141,7 +138,6 @@
         <option value="$PROJECT_DIR$/passwords.js" />
         <option value="$PROJECT_DIR$/mongoose.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/playground/promise.js" />
         <option value="$PROJECT_DIR$/playground/async-await.js" />
         <option value="$PROJECT_DIR$/playground/promise-chaining.js" />
@@ -149,12 +145,13 @@
         <option value="$PROJECT_DIR$/src/db/mongoose.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/middleware/auth.js" />
-        <option value="$PROJECT_DIR$/src/routers/user-router.js" />
         <option value="$PROJECT_DIR$/src/models/taks.js" />
         <option value="$PROJECT_DIR$/src/routers/tasks-router.js" />
         <option value="$PROJECT_DIR$/src/models/user.js" />
         <option value="$PROJECT_DIR$/src/models/task.js" />
+        <option value="$PROJECT_DIR$/src/routers/user-router.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -170,7 +167,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,6 +201,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,6 +263,7 @@
       <workItem from="1562344361226" duration="7517000" />
       <workItem from="1562352701722" duration="73000" />
       <workItem from="1562360392498" duration="1493000" />
+      <workItem from="1562381175728" duration="534000" />
     </task>
     <task id="LOCAL-00001" summary="Added task-related endpoints.">
       <created>1562287588639</created>
@@ -351,11 +349,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562351252078</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- Added users management documentation.">
+      <created>1562381414335</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1562381414335</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40149000" />
+    <option name="totallyTimeSpent" value="40683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -397,7 +402,8 @@
     <MESSAGE value="- Endpoints for CRUD operations with tasks are now&#10;protected." />
     <MESSAGE value="- Added cascade task deletion after user's profile removal" />
     <MESSAGE value="- Added timestamps for tasks and user models." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added timestamps for tasks and user models." />
+    <MESSAGE value="- Added users management documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added users management documentation." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/error.hbs" />
@@ -419,10 +425,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -461,32 +467,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/routers/user-router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="164">
+          <caret line="88" column="2" lean-forward="true" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routers/tasks-router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+        <state relative-caret-position="561">
+          <caret line="76" column="47" lean-forward="true" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routers/user-router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="411">
-            <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <first_editor relative-caret-position="241">
+            <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
           </first_editor>
           <second_editor />
         </state>
