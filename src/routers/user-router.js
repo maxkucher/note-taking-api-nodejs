@@ -55,7 +55,7 @@ router.get('/users/me', auth, async (req, res) => {
     res.send(req.user);
 });
 
-router.get('/users/:id', async (req, res) => {
+/*router.get('/users/:id', async (req, res) => {
     const _id = req.params.id;
     try {
         res.send(await User.findById(_id));
@@ -65,7 +65,7 @@ router.get('/users/:id', async (req, res) => {
                 error: "User not found"
             })
     }
-});
+});*/
 
 router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body);
